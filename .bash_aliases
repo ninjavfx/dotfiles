@@ -6,4 +6,4 @@ alias calc='gnome-calculator'
 
 alias lib='cd /mnt/library/;ls -al'
 alias work='cd /mnt/work/;ls -al'
-
+alias perso='cd /mnt/perso/;ls -al'
