@@ -11,7 +11,7 @@
 # Personal aliases
 
 #edit this file
-alias edital='subl ~/.oh-my-bash/custom/aliases/custom_aliases.sh'
+alias edital='nvim ~/.bash_aliases'
 alias srcb='source ~/.bashrc'
 
 alias sd='cd /opt/sd;ll'
@@ -20,6 +20,9 @@ alias calc='gnome-calculator'
 alias lib='cd /mnt/library/;ls -al'
 alias work='cd /mnt/work/;ls -al'
 alias perso='cd /mnt/perso/;ls -al'
+alias nv=nvidia-smi
+alias top=htop
+alias o=open 
 
 #ls
 alias ll='ls -alF'
@@ -28,12 +31,12 @@ alias l='ls -CF'
 
 alias da=date
 
-
+alias x='chmod +x'
 
 # Alias's to modified commands
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='trash -v'
+#alias rm='trash -v'
 alias mkdir='mkdir -p'
 alias psa='ps auxf'
 alias ping='ping -c 10'
@@ -42,9 +45,10 @@ alias cls='clear'
 alias apt-get='sudo apt-get'
 alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
-alias vi='nvim'
+alias vi='vim'
+
 alias svi='sudo vi'
-alias vis='nvim "+set si"'
+alias vis='vim "+set si"'
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh'                # show hidden files
