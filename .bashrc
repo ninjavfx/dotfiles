@@ -257,9 +257,10 @@ export OSH='/home/ale/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-#OSH_THEME="font"
+#OSH_THEME="agnoster"
 #OSH_THEME="powerline"
-OSH_THEME="agnoster"
+OSH_THEME="powerline-multiline"
+#OSH_THEME="powerbash10k"
 
 # If you set OSH_THEME to "random", you can ignore themes you don't like.
 # OMB_THEME_RANDOM_IGNORED=("powerbash10k" "wanelo")
