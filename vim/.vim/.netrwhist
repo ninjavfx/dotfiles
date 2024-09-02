@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/ale/00_SD'
+let g:netrw_dirhist_7='/home/ale/03_CODE'
+let g:netrw_dirhist_6='/home/ale/.vim'
+let g:netrw_dirhist_5='/opt/sd'
+let g:netrw_dirhist_4='/opt'
+let g:netrw_dirhist_3='/home'
+let g:netrw_dirhist_2='/'
+let g:netrw_dirhist_1='/home'
+let g:netrw_dirhist_0='/home/ale'
+let g:netrw_dirhist_9='/home/ale/Downloads'
