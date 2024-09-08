@@ -1,3 +1,14 @@
+call plug#begin()
+    Plug 'preservim/nerdtree'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+call plug#end()
+
+
+" Keymaps
+nnoremap <space>q :NERDTreeToggle<CR>
+nnoremap <space>w :NERDTreeFocus<CR>
+
 set mouse=r
 set number
 set relativenumber
@@ -25,6 +36,7 @@ filetype plugin on
 filetype indent on
 
 syntax on
+
 set cursorline
 
 " Status line

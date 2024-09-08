@@ -48,8 +48,9 @@ THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:="%H:%M:%S"}
 IN_VIM_THEME_PROMPT_COLOR=245
 IN_VIM_THEME_PROMPT_TEXT="vim"
 
-POWERLINE_LEFT_PROMPT=${POWERLINE_LEFT_PROMPT:="scm python_venv ruby cwd"}
-POWERLINE_RIGHT_PROMPT=${POWERLINE_RIGHT_PROMPT:="in_vim clock battery user_info"}
+POWERLINE_LEFT_PROMPT=${POWERLINE_LEFT_PROMPT:="user_info clock scm python_venv cwd"}
+#POWERLINE_LEFT_PROMPT=${POWERLINE_LEFT_PROMPT:="scm python_venv ruby cwd"}
+#POWERLINE_RIGHT_PROMPT=${POWERLINE_RIGHT_PROMPT:="in_vim clock battery user_info"}
 
 function _omb_theme_PROMPT_COMMAND { __powerline_prompt_command "$@"; }
 _omb_util_add_prompt_command _omb_theme_PROMPT_COMMAND
