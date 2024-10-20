@@ -117,11 +117,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#Bizon aliases
-#source ~/dotfiles/bizon_aliases.sh
-
-
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/ale/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -279,16 +274,6 @@ source "$OSH"/oh-my-bash.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-bash libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-bash
-# users are encouraged to define aliases within the OSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias bashconfig="mate ~/.bashrc"
-# alias ohmybash="mate ~/.oh-my-bash"
-
 
 _yazi() {
     local i cur prev opts cmd

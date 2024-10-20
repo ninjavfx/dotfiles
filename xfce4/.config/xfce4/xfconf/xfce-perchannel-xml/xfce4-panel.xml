@@ -79,7 +79,7 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="mpv;mpv.instance26529;mpv.instance27349;mpv.instance27425;mpv.instance27625;mpv.instance30502;mpv.instance31736;vlc"/>
+      <property name="mpris-players" type="string" value="mpv;mpv.instance26529;mpv.instance27349;mpv.instance27425;mpv.instance27625;mpv.instance30502;mpv.instance31736;totem;vlc"/>
     </property>
     <property name="plugin-9" type="string" value="power-manager-plugin"/>
     <property name="plugin-10" type="string" value="notification-plugin"/>
