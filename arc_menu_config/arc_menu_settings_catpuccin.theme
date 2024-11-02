@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "catpuccin-style",
+    "Menu_Background_Color": "rgb(30,32,50)",
+    "Menu_Foreground_Color": "rgb(205,214,244)",
+    "Menu_Border_Color": "rgb(136,178,247)",
+    "Menu_Border_Width": "3",
+    "Menu_Border_Radius": "14",
+    "Menu_Font_Size": "11",
+    "Menu_Separator_Color": "rgba(255,255,255,0.1)",
+    "Item_Hover_Background_Color": "rgb(21,83,158)",
+    "Item_Hover_Foreground_Color": "rgb(255,255,255)",
+    "Item_Active_Background_Color": "rgb(25,98,163)",
+    "Item_Active_Foreground_Color": "rgb(255,255,255)"
+  }
+]
