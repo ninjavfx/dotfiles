@@ -34,6 +34,7 @@ set ignorecase
 set smartcase
 set showcmd
 set showmode 
+set noswapfile
 
 set wildmenu
 set wildmode=list:longest
