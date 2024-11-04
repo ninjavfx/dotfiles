@@ -30,7 +30,7 @@
 #qt-fs-opacity=0.800000
 
 # Resize interface to the native video size (boolean)
-qt-video-autoresize=0
+#qt-video-autoresize=1
 
 # Show playing item name in window title (boolean)
 #qt-name-in-title=1
@@ -63,7 +63,7 @@ qt-video-autoresize=0
 qt-privacy-ask=0
 
 # Define which screen fullscreen goes (integer)
-qt-fullscreen-screennumber=0
+#qt-fullscreen-screennumber=-1
 
 # Load extensions on startup (boolean)
 #qt-autoload-extensions=1
@@ -4021,7 +4021,7 @@ qt-fullscreen-screennumber=0
 #deinterlace-mode=auto
 
 # Video output module (string)
-vout=vdpau_display
+#vout=
 
 # Video filter module (string)
 #video-filter=
