@@ -1,0 +1,20 @@
+backend = "glx";
+vsync = true;
+glx-use-copysubbuffer-mesa = true;
+
+glx-copy-from-front = true;
+glx-swap-method = 2;
+xrender-sync = true;
+xrender-sync-fence = true;
+
+inactive-opacity = 0.80;
+active-opacity = 0.80;
+frame-opacity = 0.80;
+
+blur: {
+  method = "kawase";
+  strength = 9;
+  background = false;
+  background-frame = false;
+  background-fixed = false;
+}

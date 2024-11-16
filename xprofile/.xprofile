@@ -1,0 +1,13 @@
+#xrandr -s 3840x2160
+
+
+#Set wallpaper
+#feh --bg-scale ~/.config/backgrounds/shaded.png
+feh --bg-scale ~/Pictures/Wallpapers/346777.jpg
+
+xset r rate 210 40
+
+#Compositor
+#picom -CGb
+
+setxkbmap -option caps:escape
