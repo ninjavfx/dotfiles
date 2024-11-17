@@ -43,11 +43,17 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym $mod+F12 exec amixer -D pulse sset Master 5%+
+bindsym $mod+F11 exec amixer -D pulse sset Master 5%-
+bindsym $mod+F10 exec amixer -D pulse sset Master 1+ toggle
+
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -158,6 +164,24 @@ set $ws10 "10"
 # Allocate applications to workspaces
 for_window [class="zen-alpha"] move to workspace $ws2
 for_window [class="firefox"] move to workspace $ws3
+for_window [class="Spotify"] move to workspace $ws5
+for_window [class="Virt-manager"] move to workspace $ws4
+for_window [title="archlinux on QEMU/KVM"] move to workspace $ws4
+
+
+# Force app in floating mode
+for_window [class="Shutter"] floating enable, resize set 800 600, move position center, sticky enable
+for_window [class="vlc"] floating enable
+for_window [class="Virt-manager"] floating enable
+for_window [title="archlinux on QEMU/KVM"] floating enable
+
+
+
+# Calculator: floating, sticky, and focused
+for_window [class="Gnome-calculator"] floating enable, focus, sticky enable
+
+# Spotify in floating mode with specific position
+#for_window [class="Spotify"] floating enable, move position 10 10
 
 
 # switch to workspace
