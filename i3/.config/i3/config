@@ -36,6 +36,12 @@ exec --no-startup-id picom -CGb
 # start shutter minimize
 exec_always --no-startup-id shutter --min_at_startup
 
+# bitwarden
+exec --no-startup-id ~/.config/Bitwarden/launch_bitwarden.sh
+
+# cherrytree
+exec --no-startup-id cherrytree
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -194,13 +200,14 @@ for_window [title="archlinux on QEMU/KVM"] floating enable
 #for_window [class="mpv"] floating enable, move position center
 for_window [class="Org.gnome.Nautilus"] floating enable, move position center
 for_window [class="Cherrytree"] floating enable, move position center
-
+for_window [class="Bitwarden"] floating enable, resize set 1500 1100, move position center, sticky enable
 
 # Calculator: floating, sticky, and focused
 for_window [class="Gnome-calculator"] floating enable, focus, sticky enable
 
 # Spotify in floating mode with specific position
 #for_window [class="Spotify"] floating enable, move position 10 10
+
 
 
 # switch to workspace
