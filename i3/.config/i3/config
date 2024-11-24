@@ -66,6 +66,9 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+f exec /opt/firefox/firefox-bin
 bindsym $mod+Shift+z exec /opt/zen/zen-bin
 
+#Nautilus
+bindsym $mod+Shift+h exec nautilus
+
 #Lock screen
 bindsym $mod+Ctrl+l exec i3lock -c 000000 -n
 
@@ -81,8 +84,8 @@ workspace_auto_back_and_forth yes
 new_window pixel 1
 
 # Set inner/outer gaps
-#gaps inner 6
-#gaps outer 4
+gaps inner 5
+gaps outer 5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -166,7 +169,6 @@ for_window [class="zen-alpha"] move to workspace $ws2
 for_window [class="firefox"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Virt-manager"] move to workspace $ws4
-for_window [title="archlinux on QEMU/KVM"] move to workspace $ws4
 
 
 # Force app in floating mode
@@ -174,7 +176,9 @@ for_window [class="Shutter"] floating enable, resize set 800 600, move position 
 for_window [class="vlc"] floating enable
 for_window [class="Virt-manager"] floating enable
 for_window [title="archlinux on QEMU/KVM"] floating enable
-
+#for_window [class="mpv"] floating enable, move position center
+for_window [class="Org.gnome.Nautilus"] floating enable, move position center
+for_window [class="Cherrytree"] floating enable, move position center
 
 
 # Calculator: floating, sticky, and focused
@@ -223,16 +227,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym j resize shrink width 2 px or 2 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym semicolon resize grow width 2 px or 2 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Left resize shrink width 2 px or 2 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right resize grow width 2 px or 2 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
