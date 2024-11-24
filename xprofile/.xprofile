@@ -3,11 +3,14 @@
 
 #Set wallpaper
 #feh --bg-scale ~/.config/backgrounds/shaded.png
-feh --bg-scale ~/Pictures/Wallpapers/346777.jpg
+#feh --bg-scale ~/Pictures/Wallpapers/prism.jpg
+#feh --bg-scale ~/Pictures/Wallpapers/abstract.jpg
+feh --bg-scale ~/Pictures/Wallpapers/clouds.png
 
 xset r rate 210 40
 
-#Compositor
-#picom -CGb
-
 setxkbmap -option caps:escape
+
+shutter --min_at_startup&
+
+killall nm-applet

@@ -29,7 +29,12 @@ font pango:Meslo LGL Nerd Font 12
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+
+# picom
 exec --no-startup-id picom -CGb
+
+# start shutter minimize
+exec_always --no-startup-id shutter --min_at_startup
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -40,7 +45,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
+
+# Kill ibus deamon and nm-applet
+exec --no-startup-id ibus exit
+exec_always killall nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -165,10 +174,16 @@ set $ws10 "10"
 
 
 # Allocate applications to workspaces
-for_window [class="zen-alpha"] move to workspace $ws2
-for_window [class="firefox"] move to workspace $ws3
-for_window [class="Spotify"] move to workspace $ws5
-for_window [class="Virt-manager"] move to workspace $ws4
+#for_window [class="zen-alpha"] move to workspace $ws2
+assign [class="zen-alpha"] $ws2
+assign [class="firefox"] $ws3
+assign [class="Spotify"] $ws5
+assign [class="Virt-manager"] $ws4
+
+#for_window [class="firefox"] move to workspace $ws3
+#for_window [class="Spotify"] move to workspace $ws5
+#for_window [class="Virt-manager"] move to workspace $ws4
+
 
 
 # Force app in floating mode
