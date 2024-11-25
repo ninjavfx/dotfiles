@@ -47,7 +47,7 @@ exec --no-startup-id cherrytree
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -85,7 +85,8 @@ bindsym $mod+Shift+z exec /opt/zen/zen-bin
 bindsym $mod+Shift+h exec nautilus
 
 #Lock screen
-bindsym $mod+Ctrl+l exec i3lock -c 000000 -n
+bindsym $mod+Control+l exec lockMe.sh
+#bindsym $mod+Control+l exec i3lock 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -195,6 +196,7 @@ assign [class="Virt-manager"] $ws4
 # Force app in floating mode
 for_window [class="Shutter"] floating enable, resize set 800 600, move position center, sticky enable
 for_window [class="vlc"] floating enable
+for_window [class="mpv"] floating enable
 for_window [class="Virt-manager"] floating enable
 for_window [title="archlinux on QEMU/KVM"] floating enable
 #for_window [class="mpv"] floating enable, move position center
