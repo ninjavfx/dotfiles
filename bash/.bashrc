@@ -3,7 +3,7 @@
 # for examples
 #export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 #export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export PATH=/home/ale/.local/bin:$PATH
+export PATH=/home/ale/.local/bin:/opt/Apps:$PATH
 
 # If not running interactively, don't do anything
 case $- in

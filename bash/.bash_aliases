@@ -1,4 +1,8 @@
 # Personal aliases
+alias nvim='nvim.appimage'
+alias vim='nvim'
+
+
 
 alias edital='nvim ~/.bash_aliases'
 alias noconda='conda deactivate'

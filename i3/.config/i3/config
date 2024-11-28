@@ -133,8 +133,8 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:  Kitty"
 set $ws2 "2:  Zen"
-set $ws3 "3:  Virt"
-set $ws4 "4:  Firefox"
+set $ws3 "3:  Firefox"
+set $ws4 "4:  Virt"
 set $ws5 "5:  Spotify"
 set $ws6 "6"
 set $ws7 "7"
@@ -145,8 +145,8 @@ set $ws10 "10"
 
 # Allocate applications to workspaces
 assign [class="zen-alpha"] $ws2
-assign [class="Virt-manager"] $ws3
-assign [class="firefox"] $ws4
+assign [class="firefox"] $ws3
+assign [class="Virt-manager"] $ws4
 assign [class="Spotify"] $ws5
 
 # Force app in floating mode
