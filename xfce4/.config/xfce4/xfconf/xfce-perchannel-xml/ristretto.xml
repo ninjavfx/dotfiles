@@ -5,8 +5,8 @@
     <property name="navigationbar" type="empty">
       <property name="position" type="string" value="left"/>
     </property>
-    <property name="height" type="uint" value="1541"/>
-    <property name="width" type="uint" value="1163"/>
+    <property name="height" type="uint" value="1036"/>
+    <property name="width" type="uint" value="1359"/>
   </property>
   <property name="file" type="empty">
     <property name="current-uri" type="string" value="file:///mnt/perso/LUNA/XXX/xxx"/>

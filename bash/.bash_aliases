@@ -2,7 +2,8 @@
 alias nvim='nvim.appimage'
 alias vim='nvim'
 
-
+alias go_single='sudo systemctl isolate multi-user.target'
+alias go_graphical='sudo systemctl isolate graphical.target'
 
 alias edital='nvim ~/.bash_aliases'
 alias noconda='conda deactivate'
@@ -15,6 +16,8 @@ alias perso='cd /mnt/perso/;ls -al'
 alias nv=nvidia-smi
 alias top=htop
 alias o=open 
+
+alias resolve=/opt/resolve/bin/resolve
 
 alias da=date
 

@@ -19,8 +19,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=5000
+HISTFILESIZE=5000
 
 # Don't put duplicate lines in the history and do not add lines that start with a space
 export HISTCONTROL=erasedups:ignoredups:ignorespace
