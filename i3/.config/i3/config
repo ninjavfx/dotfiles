@@ -8,6 +8,10 @@ set $mod Mod4
 exec_always killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh --config=~/.config/polybar/config.ini toph 
 
+# spotifyctl
+#exec_always killall spotify-listener
+exec_always --no-startup-id spotify-listener
+
 # autotiling
 exec_always --no-startup-id autotiling
 
