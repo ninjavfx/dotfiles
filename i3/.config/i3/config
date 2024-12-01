@@ -170,6 +170,7 @@ for_window [class="Cherrytree"] floating enable, move position center
 for_window [class="Bitwarden"] floating enable, resize set 1500 1100, move position center, sticky enable
 for_window [class="Gnome-calculator"] floating enable, focus, sticky enable
 for_window [class="Eog"] floating enable, move position center
+for_window [class="org.remmina.Remmina"] floating enable, move position center
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
