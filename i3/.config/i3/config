@@ -25,7 +25,7 @@ font pango:Meslo LGL Nerd Font 12
 #exec --no-startup-id dex --autostart --environment i3
 
 # picom
-exec --no-startup-id picom -CGb
+exec --no-startup-id picom -b
 
 # start shutter minimize
 exec_always --no-startup-id shutter --min_at_startup
