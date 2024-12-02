@@ -2,22 +2,23 @@
 # Manage logout with rofi
 option=`echo -e "\tlock screen\n\tlogout\n\treboot\n\tpoweroff\n\tsuspend\n\tKill user $USER" | rofi -width 600 -dmenu -p system:`
 case $option in
-    suspend)
+    $'\tsuspend')
         sudo  /usr/bin/systemctl syspend
         ;;
-    'lock screen')
+    $'\tlock screen')
         /home/ale/dotfiles/betterlockscreen-main/betterlockscreen --lock dim
         ;;
-    logout)
-        i3-nagbar -t warning -m 'Are you sure you  want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
+    $'\tlogout')
+        #i3-nagbar -t warning -m 'Are you sure you  want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
+        i3-msg exit
         ;;
-    reboot)
+    $'\treboot')
         /usr/bin/systemctl reboot
         ;;
-    poweroff)
+    $'\tpoweroff')
         /usr/bin/systemctl poweroff
         ;;
-    'kill user $USER')
+    $'\tkill user $USER')
         loginctl kill-user $USER
         ;;
 esac
