@@ -142,7 +142,7 @@ export OSH='/home/ale/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="powerline-multiline"
+#OSH_THEME="powerline-multiline"
 #OSH_THEME="powerbash10k"
 THEME_SHOW_PYTHON=true
 THEME_SHOW_SUDO=true
@@ -274,6 +274,10 @@ source "$OSH"/oh-my-bash.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+#
+
+#ohmyposh command prompt
+eval "$(oh-my-posh init bash --config $HOME/.cache/oh-my-posh/themes/catppuccin_macchiato.omp.json)"
 
 _yazi() {
     local i cur prev opts cmd

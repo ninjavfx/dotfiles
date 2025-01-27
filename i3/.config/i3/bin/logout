@@ -3,7 +3,7 @@
 option=`echo -e "\tlock screen\n\tlogout\n\treboot\n\tpoweroff\n\tsuspend\n\tKill user $USER" | rofi -width 600 -dmenu -p system:`
 case $option in
     $'\tsuspend')
-        sudo  /usr/bin/systemctl syspend
+        sudo  /usr/bin/systemctl suspend
         ;;
     $'\tlock screen')
         /home/ale/dotfiles/betterlockscreen-main/betterlockscreen --lock dim
