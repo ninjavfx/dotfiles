@@ -277,7 +277,7 @@ source "$OSH"/oh-my-bash.sh
 #
 
 #ohmyposh command prompt
-eval "$(oh-my-posh init bash --config $HOME/.cache/oh-my-posh/themes/catppuccin_macchiato.omp.json)"
+eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/catppuccin_macchiato_venv.omp.json)"
 
 _yazi() {
     local i cur prev opts cmd
@@ -344,3 +344,7 @@ fi
 
 # Set up fzf key bindings and fuzzy completion
 source /home/ale/.config/fzf_completion.bash
+
+
+figlet KONG
+fastfetch --load-config ~/.config/fastfetch/presets/examples/21.jsonc

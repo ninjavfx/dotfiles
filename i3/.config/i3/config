@@ -85,7 +85,7 @@ new_window pixel 2
 
 # Set inner/outer gaps
 gaps inner 5
-gaps outer 6
+gaps outer 5
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec rofi -show combi
@@ -157,7 +157,7 @@ set $ws10 "10"
 
 # Allocate applications to workspaces
 assign [class="firefox"] $ws2
-assign [class="zen-alpha"] $ws3
+assign [class="zen"] $ws3
 assign [class="Virt-manager"] $ws4
 assign [class="Spotify"] $ws5
 assign [class="resolve"] $ws6
@@ -177,6 +177,7 @@ for_window [class="Eog"] floating enable, move position center
 for_window [class="org.remmina.Remmina"] floating enable, move position center
 for_window [class="Standard Notes"] floating enable, move position center
 for_window [class="Rustdesk"] floating enable, move position center
+for_window [class="zoom"] floating enable, move position center
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
