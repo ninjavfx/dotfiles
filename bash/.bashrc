@@ -348,3 +348,6 @@ source /home/ale/.config/fzf_completion.bash
 
 figlet KONG
 fastfetch --load-config ~/.config/fastfetch/presets/examples/21.jsonc
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/ale/.lmstudio/bin"
