@@ -342,6 +342,15 @@ else
     complete -F _yazi -o bashdefault -o default yazi
 fi
 
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
 # Set up fzf key bindings and fuzzy completion
 source /home/ale/.config/fzf_completion.bash
 

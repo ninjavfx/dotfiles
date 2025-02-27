@@ -14,7 +14,7 @@ alias lib='cd /mnt/library/;ls -al'
 alias work='cd /mnt/work/;ls -al'
 alias perso='cd /mnt/perso/;ls -al'
 alias nv=nvidia-smi
-alias top=htop
+alias top=btop
 alias o=open 
 
 alias resolve=/opt/resolve/bin/resolve

@@ -14,8 +14,8 @@ xset dpms 900 900 900
 # set screensever to 1000 seconds
 xset s 1000 1000
 
-# map caps to escape
-setxkbmap -option caps:escape
+# disable caps lock
+setxkbmap -option caps:none
 
 # start spotify listener
 spotify-listener&
