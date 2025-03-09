@@ -119,3 +119,9 @@ alias aws_status='aws ec2 describe-instance-status --instance-ids i-057c6163914a
 # marvel aliases
 alias mount_roc="sudo mount -t cifs //roc-vfx-la.marvelstudios.loc/roc-vfx /mnt/roc/ -o username='alongaro@marvelstudios.loc'"
 alias mrv_connect='sudo gpclient connect remote.marvelstudios.com'
+
+
+alias keyboard_fix='setxkbmap -option caps:none && xset r rate 210 40'
+
+
+

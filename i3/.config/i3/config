@@ -26,13 +26,13 @@ exec --no-startup-id picom -b
 exec_always --no-startup-id shutter --min_at_startup
 
 # bitwarden
-exec --no-startup-id /opt/Apps/Bitwarden.appimage
+exec --no-startup-id /opt/Apps/Bitwarden.appimage --no-sandbox
 
 # cherrytree
 exec --no-startup-id cherrytree
 
 # standard notes
-exec --no-standard-id /opt/Apps/standard-notes.appimage
+exec --no-standard-id /home/ale/.local/bin/standard-notes
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -62,7 +62,8 @@ bindsym $mod+Shift+f exec /opt/firefox/firefox-bin
 bindsym $mod+Shift+z exec /opt/zen/zen-bin
 
 #Nautilus
-bindsym $mod+Shift+h exec nautilus
+#bindsym $mod+Shift+h exec nautilus
+bindsym $mod+Shift+h exec thunar
 
 #Lock screen
 bindsym $mod+Shift+l exec lockMe.sh
@@ -91,10 +92,10 @@ gaps outer 5
 bindsym $mod+space exec rofi -show combi
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -178,6 +179,7 @@ for_window [class="org.remmina.Remmina"] floating enable, move position center
 for_window [class="Standard Notes"] floating enable, move position center
 for_window [class="Rustdesk"] floating enable, move position center
 for_window [class="zoom"] floating enable, move position center
+for_window [class="XnView"] floating enable
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
