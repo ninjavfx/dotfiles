@@ -5,10 +5,10 @@
     <property name="navigationbar" type="empty">
       <property name="position" type="string" value="left"/>
     </property>
-    <property name="height" type="uint" value="1426"/>
-    <property name="width" type="uint" value="1260"/>
+    <property name="height" type="uint" value="1038"/>
+    <property name="width" type="uint" value="1902"/>
   </property>
   <property name="file" type="empty">
-    <property name="current-uri" type="string" value="file:///data/ml/git/ai-toolkit/output/luna_dev_v01/samples"/>
+    <property name="current-uri" type="string" value="file:///data/ml/git/ai-toolkit/output/eiza_dev_v06_linear1/samples"/>
   </property>
 </channel>
