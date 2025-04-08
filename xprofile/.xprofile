@@ -8,14 +8,15 @@ xset r rate 210 40
 # turn off bell
 xset b off
 
-# set dpms to 15 minutes 
+# set dpms to 15 minutes
 xset dpms 900 900 900
 
 # set screensever to 1000 seconds
 xset s 1000 1000
 
 # disable caps lock
-setxkbmap -option caps:none
+#setxkbmap -option caps:none
+setxkbmap -option caps:escape
 
 # start spotify listener
-spotify-listener&
+spotify-listener &
