@@ -1,11 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-        "os": "#ACB0BE",
-        "closer": "p:os",
-        "pink": "#F5BDE6",
-        "lavender": "#B7BDF8",
-        "blue":  "#8AADF4"
+    "os": "#ACB0BE",
+    "closer": "p:os",
+    "pink": "#F5BDE6",
+    "lavender": "#B7BDF8",
+    "blue": "#8AADF4"
   },
   "blocks": [
     {
@@ -56,13 +56,12 @@
           "foreground": "p:pink",
           "style": "plain",
           "powerline_symbol": "\ue0b0",
-          //"template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
           "template": " \ue235 {{ if .Venv }}{{ .Venv }} {{ end }} ",
           "type": "python",
           "properties": {
-              "display_mode": "environment",
-              "fetch_virtual_env": true,
-              "home_enabled": true
+            "display_mode": "environment",
+            "fetch_virtual_env": true,
+            "home_enabled": true
           }
         },
         {

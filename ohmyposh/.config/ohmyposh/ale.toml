@@ -1,0 +1,116 @@
+version = 3
+final_space = true
+
+[palette]
+  blue = '#8AADF4'
+  closer = 'p:os'
+  lavender = '#B7BDF8'
+  os = '#ACB0BE'
+  pink = '#F5BDE6'
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = '{{.Icon}} '
+    foreground = 'p:pink'
+    type = 'os'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '{{ .UserName }}@{{ .HostName }} '
+    foreground = 'p:blue'
+    type = 'session'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '{{ .Path }} '
+    foreground = 'p:pink'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      folder_icon = '....'
+      home_icon = '~'
+      style = 'agnoster_short'
+
+  [[blocks.segments]]
+    template = '{{ .HEAD }} '
+    foreground = 'p:lavender'
+    type = 'git'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      cherry_pick_icon = ' '
+      commit_icon = ' '
+      fetch_status = false
+      fetch_upstream_icon = false
+      merge_icon = ' '
+      no_commits_icon = ' '
+      rebase_icon = ' '
+      revert_icon = ' '
+      tag_icon = ' '
+
+  [[blocks.segments]]
+    template = '  {{ if .Venv }}{{ .Venv }} {{ end }} '
+    foreground = 'p:pink'
+    powerline_symbol = ''
+    type = 'python'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      display_mode = 'environment'
+      fetch_virtual_env = true
+      home_enabled = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+
+  [[blocks.segments]]
+    #template = ' {{ if gt .Code 0 }}{{ reason .Code }}{{ else }}{{ end }} '
+    template = ' {{ if gt .Code 0 }}<#ff0000></>{{ else }}<#23d18b></>{{ end }}'
+    foreground = 'p:pink'
+    type = 'status'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      always_enabled = true
+
+[[blocks.segments]]
+    template = ' {{ .FormattedMs }}  '
+    foreground = 'p:lavender'
+    type = 'executiontime'
+    style = 'plain'
+    
+   [blocks.segments.properties]
+      always_enabled = true 
+
+[[blocks.segments]]
+    template = ' {{ .CurrentDate | date .Format }}  '
+    foreground = 'p:blue'
+    type = 'time'
+    style = 'plain'
+
+
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = ''
+    foreground = 'p:pink'
+    type = 'text'
+    style = 'plain'
+
+

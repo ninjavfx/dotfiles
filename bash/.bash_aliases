@@ -33,8 +33,8 @@ alias ping='ping -c 10'
 alias less='less -R'
 alias cls='clear'
 alias apt-get='sudo apt-get'
-alias multitail='multitail --no-repeat -c'
-alias freshclam='sudo freshclam'
+#alias multitail='multitail --no-repeat -c'
+#alias freshclam='sudo freshclam'
 alias vi='vim'
 
 alias svi='sudo vi'
@@ -110,10 +110,10 @@ ftext() {
 }
 
 # aws instances
-alias aws_connect='aws ssm start-session --target i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
-alias aws_start='aws ec2 start-instances --instance-ids i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
-alias aws_stop='aws ec2 stop-instances --instance-ids i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
-alias aws_status='aws ec2 describe-instance-status --instance-ids i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
+#alias aws_connect='aws ssm start-session --target i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
+#alias aws_start='aws ec2 start-instances --instance-ids i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
+#alias aws_stop='aws ec2 stop-instances --instance-ids i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
+#alias aws_status='aws ec2 describe-instance-status --instance-ids i-057c6163914a9059c --profile twds-marvel-studios-nonprod --region us-west-2'
 # marvel aliases
 alias mount_roc="sudo mount -t cifs //roc-vfx-la.marvelstudios.loc/roc-vfx /mnt/roc/ -o username='alongaro@marvelstudios.loc'"
 alias mrv_connect='sudo gpclient connect remote.marvelstudios.com'
