@@ -92,7 +92,7 @@ unset __conda_setup
 [[ -s /home/ale/.autojump/etc/profile.d/autojump.sh ]] && source /home/ale/.autojump/etc/profile.d/autojump.sh
 
 #ohmyposh prompt
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ale.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ale_zsh.toml)"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

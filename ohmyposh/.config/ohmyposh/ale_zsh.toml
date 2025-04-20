@@ -17,6 +17,7 @@ final_space = true
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
+  newline = true 
 
   [[blocks.segments]]
     template = '{{.Icon}} '
@@ -86,22 +87,21 @@ final_space = true
       always_enabled = true
 
 [[blocks.segments]]
-#template = ' {{ .FormattedMs }}  '
-    template = ' {{ div .Ms 1000 }}s '
+    #template = ' {{ .FormattedMs }}  '
     foreground = 'p:lavender'
     type = 'executiontime'
     style = 'plain'
+    template = ' {{ div .Ms 1000 }}s '
     
    [blocks.segments.properties]
       threshold = 5000
+      #always_enabled = false 
 
 [[blocks.segments]]
     template = ' {{ .CurrentDate | date .Format }}  '
     foreground = 'p:blue'
     type = 'time'
     style = 'plain'
-
-
 
 [[blocks]]
   type = 'prompt'
@@ -117,5 +117,9 @@ final_space = true
 
 [secondary_prompt]
   foreground = 'p:pink'
-#background = 'transparent'
   template = '❯❯ '
+
+[transient_prompt]
+  foreground = 'p:pink'
+  template = '❯'
+
