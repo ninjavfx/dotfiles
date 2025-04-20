@@ -1,6 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 #export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 #export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export PATH=/home/ale/.local/bin:/opt/Apps:$PATH
@@ -47,11 +44,6 @@ xterm-color | *-256color) color_prompt=yes ;;
 esac
 export TERM=xterm-256color
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
 if [ -n "$force_color_prompt" ]; then
   if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
     # We have color support; assume it's compliant with Ecma-48
@@ -95,10 +87,6 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
@@ -129,7 +117,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-source /usr/share/autojump/autojump.sh
+#autojump
+[[ -s /home/ale/.autojump/etc/profile.d/autojump.sh ]] && source /home/ale/.autojump/etc/profile.d/autojump.sh
 
 #Oh my bash
 
@@ -220,7 +209,8 @@ OMB_USE_SUDO=true
 completions=(
   git
   composer
-  ssh
+  pip
+  tmux
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
@@ -252,30 +242,9 @@ plugins=(
 
 source "$OSH"/oh-my-bash.sh
 
-# User configuration
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 export EDITOR='nvim.appimage'
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-#
-
 #ohmyposh command prompt
-#eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/themes/powerlevel10k_rainbow.omp.json)"
 eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/ale.toml)"
 
 _yazi() {

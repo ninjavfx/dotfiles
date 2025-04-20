@@ -12,7 +12,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 export PATH=/home/ale/.local/bin:/opt/Apps:$PATH
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+#zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -43,9 +43,19 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 #Aliases
+alias cp='cp -iv'
+alias mkdir='mkdir -pv'
+alias mv='mv -iv'
+alias rm='rm -v'
 alias ls='ls --color'
 alias ll='ls -al'
 alias vim='nvim.appimage'
+
+#Extra aliases 
+if [ -f ~/.zsh_aliases ]; then
+  . ~/.zsh_aliases
+fi
+
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
@@ -78,10 +88,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-source /usr/share/autojump/autojump.sh
+#autojump
+[[ -s /home/ale/.autojump/etc/profile.d/autojump.sh ]] && source /home/ale/.autojump/etc/profile.d/autojump.sh
+
+#ohmyposh prompt
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ale.toml)"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

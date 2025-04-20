@@ -59,10 +59,14 @@ final_space = true
       revert_icon = ' '
       tag_icon = ' '
 
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+
   [[blocks.segments]]
     template = '  {{ if .Venv }}{{ .Venv }} {{ end }} '
     foreground = 'p:pink'
-    powerline_symbol = ''
     type = 'python'
     style = 'plain'
 
@@ -70,10 +74,6 @@ final_space = true
       display_mode = 'environment'
       fetch_virtual_env = true
       home_enabled = true
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'right'
 
   [[blocks.segments]]
     #template = ' {{ if gt .Code 0 }}{{ reason .Code }}{{ else }}{{ end }} '
@@ -92,7 +92,7 @@ final_space = true
     style = 'plain'
     
    [blocks.segments.properties]
-      always_enabled = true 
+      always_enabled = false 
 
 [[blocks.segments]]
     template = ' {{ .CurrentDate | date .Format }}  '
@@ -108,7 +108,8 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = ''
+    #template = '❯'
+    template = '❯'
     foreground = 'p:pink'
     type = 'text'
     style = 'plain'
