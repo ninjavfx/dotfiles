@@ -108,3 +108,6 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ale_zsh.toml)"
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#Claude code PATH
+export PATH=/opt/npm-global/bin:$PATH
