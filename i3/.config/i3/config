@@ -154,10 +154,10 @@ bindsym $mod+a focus parent
 set $ws1 "1:  Kitty"
 set $ws2 "2:  Firefox"
 set $ws3 "3:  Zen"
-set $ws4 "4:  Virt"
-set $ws5 "5:  Spotify"
-set $ws6 "6:  Resolve"
-set $ws7 "7"
+set $ws4 "4: 󰭹 Whatsapp"
+set $ws5 "5:  Virt"
+set $ws6 "6:  Spotify"
+set $ws7 "7:  Resolve"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -166,9 +166,10 @@ set $ws10 "10"
 # Allocate applications to workspaces
 assign [class="firefox"] $ws2
 assign [class="zen"] $ws3
-assign [class="Virt-manager"] $ws4
-assign [class="Spotify"] $ws5
-assign [class="resolve"] $ws6
+assign [class="whatsapp"] $ws4
+assign [class="Virt-manager"] $ws5
+assign [class="Spotify"] $ws6
+assign [class="resolve"] $ws7
 
 # Force app in floating mode
 for_window [class="Shutter"] floating enable, resize set 800 600, move position center, sticky enable
