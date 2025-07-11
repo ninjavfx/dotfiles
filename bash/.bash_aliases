@@ -109,8 +109,22 @@ ftext() {
   grep -iIHrn --color=always "$1" . | less -r
 }
 
-
-
 alias keyboard_fix='setxkbmap -option caps:escape && xset r rate 210 40'
 
 alias kitty_update='curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin'
+
+alias nalaf="apt-cache search . | fzf --multi --preview 'pkg=\$(echo {} | cut -d\" \" -f1); if dpkg -s \$pkg &>/dev/null; then echo \"✅ INSTALLED\"; else echo \"❌ NOT INSTALLED\"; fi; echo; nala show \$pkg' --preview-window=down:75% | cut -d\" \" -f1 | xargs -ro sudo nala install"
+
+alias aptf='apt-cache search . \
+  | fzf --multi \
+        --preview '\''pkg=$(echo {} | cut -d" " -f1); \
+                    if dpkg -s "$pkg" >/dev/null 2>&1; then \
+                      echo "✅ INSTALLED"; \
+                    else \
+                      echo "❌ NOT INSTALLED"; \
+                    fi; \
+                    echo; \
+                    apt show "$pkg"'\''
+        --preview-window=right:70% \
+  | awk "{print \$1}" \
+  | xargs -ro sudo apt install'

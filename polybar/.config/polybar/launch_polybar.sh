@@ -1,4 +1,4 @@
-killall polybar
+pkill polybar
 sleep 1
 
 if type "xrandr"; then

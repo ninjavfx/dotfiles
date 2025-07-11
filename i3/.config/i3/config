@@ -59,7 +59,7 @@ bindsym $mod+Return exec kitty
 
 #Start firefox and zen-browser
 bindsym $mod+Shift+f exec /opt/firefox/firefox-bin
-bindsym $mod+Shift+z exec /opt/zen/zen-bin
+#bindsym $mod+Shift+z exec /opt/zen/zen-bin
 
 #Nautilus
 #bindsym $mod+Shift+h exec nautilus
@@ -95,8 +95,14 @@ new_window pixel 2
 gaps inner 3
 gaps outer 3
 
-# start dmenu (a program launcher)
+# start rofi in combi
 bindsym $mod+space exec rofi -show combi
+
+#rofi in dmenu mode
+bindsym $mod+Tab exec rofi -show drun
+
+#rofi in window
+bindsym $mod+z exec rofi -show window
 
 # change focus
 bindsym $mod+h focus left

@@ -1,4 +1,3 @@
-#export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 #export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export PATH=/home/ale/.local/bin:/opt/Apps:$PATH
 
@@ -120,8 +119,6 @@ unset __conda_setup
 #autojump
 [[ -s /home/ale/.autojump/etc/profile.d/autojump.sh ]] && source /home/ale/.autojump/etc/profile.d/autojump.sh
 
-#Oh my bash
-
 # Path to your oh-my-bash installation.
 export OSH='/home/ale/.oh-my-bash'
 
@@ -242,8 +239,6 @@ plugins=(
 
 source "$OSH"/oh-my-bash.sh
 
-export EDITOR='nvim.appimage'
-
 #ohmyposh command prompt
 eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/ale.toml)"
 
@@ -308,19 +303,19 @@ else
   complete -F _yazi -o bashdefault -o default yazi
 fi
 
-function y() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    builtin cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
+#Source function
+if [ -f ~/.local/share/shell/.functions ]; then
+  source ~/.local/share/shell/.functions
+fi
 
-# Set up fzf key bindings and fuzzy completion
-#source /home/ale/.config/fzf_completion.bash
+export EDITOR='nvim.appimage'
+export SUDO_EDITOR="$EDITOR"
+export VISUAL="$EDITOR"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#add npm-global to PATH
+export PATH=/opt/npm-global/bin:$PATH
 
 figlet KONG
 fastfetch --load-config ~/.config/fastfetch/presets/examples/21.jsonc
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

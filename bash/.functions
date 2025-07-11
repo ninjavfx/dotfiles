@@ -1,0 +1,121 @@
+# Compression
+compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
+
+extract() {
+	for archive in "$@"; do
+		if [ -f "$archive" ]; then
+			case $archive in
+			*.tar.bz2) tar xvjf $archive ;;
+			*.tar.gz) tar xvzf $archive ;;
+			*.bz2) bunzip2 $archive ;;
+			*.rar) rar x $archive ;;
+			*.gz) gunzip $archive ;;
+			*.tar) tar xvf $archive ;;
+			*.tbz2) tar xvjf $archive ;;
+			*.tgz) tar xvzf $archive ;;
+			*.zip) unzip $archive ;;
+			*.Z) uncompress $archive ;;
+			*.7z) 7z x $archive ;;
+			*) echo "don't know how to extract '$archive'..." ;;
+			esac
+		else
+			echo "'$archive' is not a valid file!"
+		fi
+	done
+}
+
+
+
+# Write iso file to sd card
+iso2sd() {
+  if [ $# -ne 2 ]; then
+    echo "Usage: iso2sd <input_file> <output_device>"
+    echo "Example: iso2sd ~/Downloads/ubuntu-25.04-desktop-amd64.iso /dev/sda"
+    echo -e "\nAvailable SD cards:"
+    lsblk -d -o NAME | grep -E '^sd[a-z]' | awk '{print "/dev/"$1}'
+  else
+    sudo dd bs=4M status=progress oflag=sync if="$1" of="$2"
+    sudo eject $2
+  fi
+}
+
+# Create a desktop launcher for a web app
+web2app() {
+  if [ "$#" -ne 3 ]; then
+    echo "Usage: web2app <AppName> <AppURL> <IconURL> (IconURL must be in PNG -- use https://dashboardicons.com)"
+    return 1
+  fi
+
+  local APP_NAME="$1"
+  local APP_URL="$2"
+  local ICON_URL="$3"
+  local ICON_DIR="$HOME/.local/share/applications/icons"
+  local DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
+  local ICON_PATH="${ICON_DIR}/${APP_NAME}.png"
+
+  mkdir -p "$ICON_DIR"
+
+  if ! curl -sL -o "$ICON_PATH" "$ICON_URL"; then
+    echo "Error: Failed to download icon."
+    return 1
+  fi
+
+  cat > "$DESKTOP_FILE" <<EOF
+[Desktop Entry]
+Version=1.0
+Name=$APP_NAME
+Comment=$APP_NAME
+Exec=brave --new-window --app="$APP_URL" --name="$APP_NAME" --class="$APP_NAME"
+Terminal=false
+Type=Application
+Icon=$ICON_PATH
+StartupNotify=true
+EOF
+
+  chmod +x "$DESKTOP_FILE"
+}
+
+web2app-remove() {
+  if [ "$#" -ne 1 ]; then
+    echo "Usage: web2app-remove <AppName>"
+    return 1
+  fi
+
+  local APP_NAME="$1"
+  local ICON_DIR="$HOME/.local/share/applications/icons"
+  local DESKTOP_FILE="$HOME/.local/share/applications/${APP_NAME}.desktop"
+  local ICON_PATH="${ICON_DIR}/${APP_NAME}.png"
+
+  rm "$DESKTOP_FILE"
+  rm "$ICON_PATH"
+}
+
+
+# Copy file with a progress bar
+cpp() {
+    set -e
+    strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
+    awk '{
+        count += $NF
+        if (count % 10 == 0) {
+            percent = count / total_size * 100
+            printf "%3d%% [", percent
+            for (i=0;i<=percent;i++)
+                printf "="
+            printf ">"
+            for (i=percent;i<100;i++)
+                printf " "
+            printf "]\r"
+        }
+    }
+    END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
+}
+
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}

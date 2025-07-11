@@ -65,22 +65,19 @@ if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases
 fi
 
-
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+#Source function
+if [ -f ~/.local/share/shell/.functions ]; then
+  source ~/.local/share/shell/.functions
+fi
+
 
 export EDITOR='nvim.appimage'
-
-function y() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    builtin cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
+export SUDO_EDITOR="$EDITOR"
+export VISUAL="$EDITOR"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -109,5 +106,9 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ale_zsh.toml)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#Claude code PATH
+#add npm-global to PATH
 export PATH=/opt/npm-global/bin:$PATH
+
+figlet KONG
+fastfetch --load-config ~/.config/fastfetch/presets/examples/21.jsonc
+
