@@ -5,7 +5,8 @@
 set $mod Mod4
 
 # polybar
-exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh --config=~/.config/polybar/config.ini toph 
+exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+#exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh --config=~/.config/polybar/config.ini toph 
 
 # spotifyctl
 #exec_always killall spotify-listener
@@ -47,7 +48,7 @@ bindsym $mod+F12 exec amixer -D pulse sset Master 5%+
 bindsym $mod+F11 exec amixer -D pulse sset Master 5%-
 bindsym $mod+F10 exec amixer -D pulse sset Master 1+ toggle
 
-# Take s screeshot using the Home key
+# Take a screeshot using the Home key
 bindsym --release $mod+Home exec shutter -s
 
 
@@ -59,7 +60,7 @@ bindsym $mod+Return exec kitty
 
 #Start firefox and zen-browser
 bindsym $mod+Shift+f exec /opt/firefox/firefox-bin
-#bindsym $mod+Shift+z exec /opt/zen/zen-bin
+bindsym $mod+Shift+z exec /opt/zen/zen-bin
 
 #Nautilus
 #bindsym $mod+Shift+h exec nautilus
@@ -164,7 +165,7 @@ set $ws4 "4: 󰭹 Whatsapp"
 set $ws5 "5:  Virt"
 set $ws6 "6:  Spotify"
 set $ws7 "7:  Resolve"
-set $ws8 "8"
+set $ws8 "8:  Steam"
 set $ws9 "9"
 set $ws10 "10"
 
@@ -176,6 +177,7 @@ assign [class="whatsapp"] $ws4
 assign [class="Virt-manager"] $ws5
 assign [class="Spotify"] $ws6
 assign [class="resolve"] $ws7
+assign [class="steam"] $ws8
 
 # Force app in floating mode
 for_window [class="Shutter"] floating enable, resize set 800 600, move position center, sticky enable
@@ -195,6 +197,8 @@ for_window [class="Rustdesk"] floating enable, move position center
 for_window [class="zoom"] floating enable, move position center
 for_window [class="XnView"] floating enable
 for_window [class="Brave"] floating enable, resize set 1200 1000
+for_window [class="exr-view"] floating enable
+for_window [class="EXR Visualizer"] floating enable
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -225,7 +229,12 @@ bindsym $mod+Shift+t reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Kill i3 and log out
+bindsym $mod+Shift+q exec i3-msg exit
+
+# Log out menu
 bindsym $mod+Shift+e exec /home/ale/.config/i3/bin/logout
 
 
