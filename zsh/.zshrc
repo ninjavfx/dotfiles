@@ -60,6 +60,9 @@ alias ls='ls --color'
 alias ll='ls -al'
 alias vim='nvim.appimage'
 
+#RV alias
+alias rv='/opt/openRV/bin/rv'
+
 #Extra aliases 
 if [ -f ~/.zsh_aliases ]; then
   . ~/.zsh_aliases

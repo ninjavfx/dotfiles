@@ -199,6 +199,7 @@ for_window [class="XnView"] floating enable
 for_window [class="Brave"] floating enable, resize set 1200 1000
 for_window [class="exr-view"] floating enable
 for_window [class="EXR Visualizer"] floating enable
+for_window [class="RV"] floating enable
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
