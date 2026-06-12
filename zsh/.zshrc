@@ -115,3 +115,6 @@ export PATH=/opt/npm-global/bin:$PATH
 figlet KONG
 fastfetch --load-config ~/.config/fastfetch/presets/examples/21.jsonc
 
+
+# opencode
+export PATH=/home/ale/.opencode/bin:$PATH
